@@ -1,0 +1,18 @@
+{
+    "name": "prometherion/iban-validator",
+    "description": "Parse and validate IBAN bank accounts",
+    "authors": [
+        {
+            "name": "Dario Tranchitella",
+            "email": "dario@tranchitella.eu"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prometherion\\": "src/Prometherion"
+        }
+    }
+}
