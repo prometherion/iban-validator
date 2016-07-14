@@ -131,6 +131,9 @@ class IbanValidator
             'y' => 34,
             'z' => 35
         ];
+        if (!array_key_exists(substr($iban, 0, 2), $countries)) {
+            throw new Exception('Country code ' .strtoupper(substr($iban, 0, 2)) . ' seems not valid');
+        }
         if(strlen($iban) == $countries[substr($iban, 0, 2)]) {
             $movedchar = substr($iban, 4).substr($iban, 0, 4);
             $movedchar_array = str_split($movedchar);
