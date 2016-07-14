@@ -10,6 +10,7 @@
     "require": {
         "php": ">=5.4.0"
     },
+    "license": "MIT",
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
