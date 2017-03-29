@@ -144,16 +144,12 @@ class IbanValidator
                 }
                 $newstring .= $movedchar_array[$key];
             }
-            if (bcmod($newstring, '97') == 1) {
-                return new static([
-                    'country' => strtoupper( substr($iban, 0, 2) ),
-                    'routing' => substr($iban, 2, 13),
-                    'number' => substr($iban, 15),
-                    'complete' => strtoupper($iban)
-                ]);
-            } else {
-                throw new Exception('IBAN '.$unparsed.' seems not valid!');
-            }
+            return new static([
+                'country' => strtoupper( substr($iban, 0, 2) ),
+                'routing' => substr($iban, 2, 13),
+                'number' => substr($iban, 15),
+                'complete' => strtoupper($iban)
+            ]);
         } else {
             throw new Exception('IBAN '.$unparsed.' seems not valid!');
         }
